@@ -1,1 +1,76 @@
-# jsp
+<form class="container" method="post">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">ID</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" ng-model="id">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Họ Tên</label>
+      <input type="text" class="form-control" id="exampleInputPassword2" ng-model="hoTen" title="adsa">
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="nam" ng-model="gioiTinh">
+        <label class="form-check-label" for="inlineRadio1">Nam</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="nữ" ng-model="gioiTinh">
+        <label class="form-check-label" for="inlineRadio2">Nữ</label>
+      </div>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" ng-model="lop">
+        <option value="IT1032">IT1032</option>
+        <option value="IT1033">IT1033</option>
+        <option value="IT1035">IT1035</option>
+      </select>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Địa chỉ</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" ng-model="diaChi">
+      </div>
+      <button type="submit" class="btn btn-primary" ng-click="addSinhVien()">Thêm</button>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+<table class="table container">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Ho Ten</td>
+      <td>Tuoi</td>
+      <td>Dia Chi</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="nhanVien in listNhanVien">
+      <td>{{nhanVien.id}}</td>
+      <td>{{nhanVien.hoTen}}</td>
+      <td>{{nhanVien.tuoi}}</td>
+      <td>{{nhanVien.diaChi}}</td>
+      <td>
+        <button class="btn btn-primary" ng-click="detail(nhanVien.id)">
+          Detail
+        </button>
+        <button class="btn btn-primary" ng-click="delete(nhanVien.id)">
+          Delete
+        </button>
+        <a href="#detail/{{nhanVien.id}}" class="btn btn-primary"> Chi Tiet</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+{
+  "nhanVien": [
+    {
+      "id": "NV1",
+      "hoTen": "Nguyen Van A",
+      "tuoi": 20,
+      "diaChi": "Ha Noi"
+    },
+    {
+      "id": "NV2",
+      "hoTen": "Nguyen Van A",
+      "tuoi": 20,
+      "diaChi": "Ha Noi"
+    }
+  ]
+}
