@@ -1,1 +1,21 @@
-
+  <script>
+      var app = angular.module("myApp", ["ngRoute"]);//ứng dụng AngularJS với tên là "myApp" và sử dụng module "ngRoute" để quản lý định tuyến (routing) trong ứng dụng.
+      app.config(function ($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix("");
+        $routeProvider
+          .when("/home", {
+            templateUrl: "home.html",
+            controller: nhanVienController,
+          })
+          .when("/gioithieu", {
+            templateUrl: "gioithieu.html",
+          })
+          .when("/detail/:id", {
+            templateUrl: "detail.html",
+            controller: detailController,
+          })
+          .otherwise({
+            redirectTo: "/home",
+          });
+      });
+    </script>
