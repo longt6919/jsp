@@ -1,3 +1,7 @@
+    <body ng-app="myApp" >
+    <div ng-include="'header.html'"></div>
+    <div ng-view></div>
+    <div ng-include="'footer.html'"></div>
   <script>
       var app = angular.module("myApp", ["ngRoute"]);//ứng dụng AngularJS với tên là "myApp" và sử dụng module "ngRoute" để quản lý định tuyến (routing) trong ứng dụng.
       app.config(function ($routeProvider, $locationProvider) {
@@ -19,3 +23,4 @@
           });
       });
     </script>
+</body>
